@@ -13,27 +13,52 @@
 </head>
 
 <body>
- <!--- going to add favorites! -->
-    
+    <!--- going to add favorites! -->
+
     <!---- starting navBar! -->
-    
+
     <nav class="navbar bg-body-tertiary navbar-dark bg-dark navbar-inner h-100">
         <div class="container">
-            <a class="navbar-brand">Navbar</a>
-            <form id="form" class="form">
-                <input type="text" id="search" class="search" placeholder="Search By Location" autocomplete="off"> 
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-            
+            <a class="navbar-brand">
+                <!----- Popups for the favorite cities -->
+                <button class="btn btn-primary noBorder" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">favorites</button>
+                
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
+                    <ul class="list-group">
+                        
+                    </ul>
+                </div>
+                <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
         </div>
-    </nav>
+        
+        <!------ -->
+        
+        
+    </a>
+    <form id="form" class="form">
+        <input type="text" id="search" class="placeholder-glow search" placeholder="Search By Location" autocomplete="off">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
     
+</div>
+
+    </nav>
+  
     <!--- navBar End-->
     <div class="container">
-        <div class="row d-flex justify-content-space-between pt-5 mt-5">
+        <div class="row d-flex justify-content-center pt-5 mt-5">
             <div class="col-md-10 col-lg-8 col-xl-6">
-                
-                <div class="card bg-dark text-white">
+
+                <div class="card bg-dark text-white w-40">
                     <div class="bg-image">
                         <img src="/assets/yang-wewe-OsFGJ3vXe9Q-unsplash.jpg" class="card-img" alt="weather" />
                         <div class="mask" style="background-color: rgba(190, 216, 232, .5);"></div>
@@ -49,32 +74,35 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 col-sm-4 col-xl-4 d-flex justify-content-space-between">
+
+            <!-- <div class="col-sm-4"></div> -->
+            <div class="col-4 newsizing">
                 <main id="main">
-                    
+
                 </main>
             </div>
         </div>
-        
+
         <!----- starting footer!! -->
 
         <!---- d434b226-aa0d-4c6b-bb92-628cf58904db   -->
 
-        
+
     </div>
     <br>
     <br>
 
     <div class="container-fluid">
-        <div class="col-sm-12 py-5 mt-5">
-        <footer>
-        <p>Author: John Magpantay<br>
-        <a href="mailto:hege@example.com">jmagpantay@codestack.co</a></p>
-      </footer>
-      </div>
+        <div class="col-sm-12 footer py-5 mt-5">
+            <footer>
+                <p>Author: John Magpantay<br>
+                    <a href="mailto:jmagpantay@codestack.co">jmagpantay@codestack.co</a>
+                </p>
+            </footer>
+        </div>
 
-      </div>
-    
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>

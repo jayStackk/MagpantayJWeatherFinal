@@ -6,6 +6,8 @@
 const currDate = document.getElementById('date');
 let cnt = 5;
 let apiID = "26f9e030a111095f4a45a2b8be0844f8";
+
+
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 const url = (city) => `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiID}&cnt=${cnt}`;
@@ -83,14 +85,14 @@ function addWeatherToPage(result) {
     const data = result.list
     const resultForecast = document.createElement('div')
     for (let i in data) {
-        const temp = Ktoc(data[i].main.temp);
+        const temp = breeze(data[i].main.temp);
         resultForecast.innerHTML = resultForecast.innerHTML + ` 
         <div class="futureforecast">
             <div class="weatherforecast">
               <div class = "row weatherforecastitem">
-                <div class = "col-xl-8 col-lg-8 day">${weekday[i]}</div>
+                <div class = "day">${weekday[i]}</div>
                 <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="baccground" class="w-icon">
-                <div class="col-xl-4 temp"> ${temp}&deg;C</div>
+                <div class="col-9 temp "> ${temp}&deg;C</div>
               </div>
             </div>
         </div> 
@@ -101,7 +103,7 @@ function addWeatherToPage(result) {
     main.appendChild(resultForecast);
 };
 
-function Ktoc(K) {
+function breeze(K) {
     return Math.floor(K - 273.15);
 }
 
@@ -112,3 +114,4 @@ form.addEventListener('click', (e) => {
         getWeatherByLocation(city)
     }
 }); 
+
