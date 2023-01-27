@@ -48,6 +48,10 @@ searchWeather = () => {
     this.fetchWeather(document.querySelector(".search").value);
 }
 
+// Mobzilla basic fetch REquest! 
+// Url from OpenWeatherMap
+// Parsing Data
+
 
 fetchWeather = (city) => {
     fetch(
@@ -61,6 +65,8 @@ fetchWeather = (city) => {
     }).then((data) => this.displayWeather(data));
 }
 
+
+// This is what's showing up inside the Card Body, Using "IDs" as my targeting point. 
 displayWeather = (data) => {
     const { name } = data;
     const { description } = data.weather[0];
@@ -73,9 +79,11 @@ displayWeather = (data) => {
     document.querySelector(".wind").innerText = "Wind speed: " + speed + " km/h";
 }
 
+
+// Using Async to get the value of the user Input
 async function getWeatherByLocation(city) {
     const resp = await fetch(url(city), {
-        origin: "cros"
+        
     });
     const respData = await resp.json();
     addWeatherToPage(respData);
@@ -98,6 +106,8 @@ function addWeatherToPage(result) {
         </div> 
       `;
     }
+
+
     //  cleanup   
     main.innerHTML = "";
     main.appendChild(resultForecast);

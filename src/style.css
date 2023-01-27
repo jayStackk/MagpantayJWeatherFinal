@@ -107,6 +107,12 @@ body {
     left: 110pt;
   }
 
+  .newFontz {
+
+
+    font-size: 43pt;
+  }
+
   .footer {
     position: fixed;
     left: 0;
